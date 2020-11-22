@@ -58,27 +58,27 @@ Here is a case we went through at work. Developers added some code, memory usage
 
 `dumpsys meminfo <package name| pid>`
 
-<img src="/Users/yangwang/Desktop/Screen Shot 2020-11-10 at 11.31.50 PM.png" alt="Screen Shot 2020-11-10 at 11.31.50 PM" style="zoom:50%;" />
+<img src="/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Screen Shot 2020-11-10 at 11.31.50 PM.png" alt="Screen Shot 2020-11-10 at 11.31.50 PM" style="zoom:50%;" />
 
 TOTAL Pss Total(1) is what you see in Android system memory use like this:
 
-<img src="/Users/yangwang/Desktop/WechatIMG124.jpeg" alt="WechatIMG124" style="zoom: 33%;" />
+<img src="/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/WechatIMG124.jpeg" alt="WechatIMG124" style="zoom: 33%;" />
 
 Dalvik Heap Alloc(2) is what you see in Android Studio Memory.
 
 In our case, we found App`s process memory use inceased due to Dalvik Heap Pss, and Dalvik Heap Free also increased, but why?
 
-<img src="/Users/yangwang/Desktop/Screen Shot 2020-11-10 at 9.21.27 PM.png" alt="Screen Shot 2020-11-10 at 9.21.27 PM" style="zoom:50%;" />
+<img src="/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Screen Shot 2020-11-10 at 9.21.27 PM.png" alt="Screen Shot 2020-11-10 at 9.21.27 PM" style="zoom:50%;" />
 
 Android developers best practices document give us suggestions about [how to manage App's memory](https://developer.android.com/topic/performance/memory) , also we can go though dalvik source code(dalvik/vm/alloc) to get better understanding of how memory allocated by DVM. When we get researches done, here is our guess: the problem may be **memory fragmentation**.
 
 To check on our guess, we run the App and get the hprof file. Use Eclipse MAT, chose all objects `list_objects java.*`  and export to csv. Objects that have the same high bit address(&0xfffff000) share the same page. 
 
-![Screen Shot 2020-11-11 at 9.31.52 PM](/Users/yangwang/Desktop/Screen Shot 2020-11-11 at 9.31.52 PM.png)
+![Screen Shot 2020-11-11 at 9.31.52 PM](/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Screen Shot 2020-11-11 at 9.31.52 PM.png)
 
 So that, we can get all pages that used less than 2KB, and use OQL to import the objects back into MAT. Then, we can have a better look at these objects, and catch those who cause memory fragmentation.
 
-![Picture1](/Users/yangwang/Desktop/Picture1.png)
+![Picture1](/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Picture1.png)
 
 Here is the code that cause memory fragmentation:
 
@@ -124,7 +124,7 @@ b.`TrafficStats.getUidRxBytes (int uid)`  & `TrafficStats.getUidTxBytes(int uid)
 
 c.`/proc/uid_stat/[uid]/tcp_snd`  & ` /proc/uid_stat/[uid]/tcp_rcv` (some systsems do not have those files)
 
-![Screen Shot 2020-11-13 at 10.22.21 PM](/Users/yangwang/Desktop/Screen Shot 2020-11-13 at 10.22.21 PM.png)
+![Screen Shot 2020-11-13 at 10.22.21 PM](/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Screen Shot 2020-11-13 at 10.22.21 PM.png)
 
 Column 6 is rx_bytes, column 8 is tx_bytes, `rx_bytes + tx_bytes = traffic statistics` 
 
@@ -168,7 +168,7 @@ Use [Lint](https://developer.android.com/studio/write/lint) to detect code that 
 
 2. Systrace activity manager
 
-   ![Screen Shot 2020-11-18 at 2.58.58 PM](/Users/yangwang/Desktop/Screen Shot 2020-11-18 at 2.58.58 PM.png)
+   ![Screen Shot 2020-11-18 at 2.58.58 PM](/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Screen Shot 2020-11-18 at 2.58.58 PM.png)
 
 bindApplication is time to load Application
 
