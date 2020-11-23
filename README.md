@@ -162,23 +162,13 @@ Use [Lint](https://developer.android.com/studio/write/lint) to detect code that 
 
 
 
-## Identify app startup bottlenecks
+##  App startup time
 
-1. Record a vedio and count
+1. One way to measure the App startup time is recording the whole startup procedure and count it's time-consuming. You can do this manually or automatically.
 
-2. Systrace activity manager
+2. `Systrace` tool is another choice. Enable the `Activity Manager `tag, analyse the trace and get  `startup-time = bindApplication + activityStart`.
 
-   ![Screen Shot 2020-11-18 at 2.58.58 PM](/Users/yangwang/Documents/Projects/Android_Mobile_Test_Knowledge/README.assets/Screen Shot 2020-11-18 at 2.58.58 PM.png)
-
-bindApplication is time to load Application
-
-activityStart = Application + SplashAcivity + MainActivity
-
-3. Check Main thread IO/ Network data transfer / 	大量运算
-
-   将耗时操作移出ui线程
-
-   IO in main thread can affect startup time, IOmonitor
+3. You can find more in [android Docs](https://developer.android.com/topic/performance/vitals/launch-time). We found disk I/O, network data transfer, operations that is cpu-consuming in UI thread  that affect app's startup time in practice. 
 
 
 
