@@ -4,7 +4,7 @@
 
 ### Root
 
-A rooted phone can make performance data collecting much easier.  Just use [Magisk](https://github.com/topjohnwu/Magisk) and  follow the instructions online. ; )
+A rooted phone can make performance data collection much easier.  Just use [Magisk](https://github.com/topjohnwu/Magisk) and  follow the instructions online. ; )
 
 ### Linux Performance Tools
 
