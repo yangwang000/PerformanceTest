@@ -179,6 +179,7 @@ Use [Lint](https://developer.android.com/studio/write/lint) to detect code that 
 1. Use UCDetector to find unnecessary code.
 
 2. Use Simian tool to find duplication in code.
+<<<<<<< HEAD
 
 3. Find unused image in older version. Pay attention to `android:visibility="gone"` in xml file and `view.setVisibility(View.GONE)` in java code.
 
@@ -187,3 +188,6 @@ Use [Lint](https://developer.android.com/studio/write/lint) to detect code that 
 ## Unix Filesystem Hierarchy Standard (FHS)
 
 https://www.pathname.com/fhs/
+=======
+3. Find unused image in older version. Pay attention to `android:visibility="gone"` in xml file and `view.setVisibility(View.GONE)` in java code.
+>>>>>>> 9169b3473ca376c77e5cdee49ca6233d7658e4b4
