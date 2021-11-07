@@ -16,7 +16,7 @@ Android is based on Linux kernel, so we can use the Linux Performance Tools to g
 
 ## Memory Usage Related
 
-### Memory leak detection tools
+### Memory leak detection
 
 We can use  [Android Studio Memory Profiler](https://developer.android.com/studio/profile/memory-profiler#profiler-memory-leak-detection) to detect memory leak. If you're more familiar with [Eclipse MAT](https://www.eclipse.org/mat/), you can [capture a heap dump](https://developer.android.com/studio/profile/memory-profiler#capture-heap-dump) |`am dumpheap`|`Debug.dumpHprofData("path")`and open it with MAT.
 
@@ -36,7 +36,7 @@ Some oprations will cause memory leak, such as forgetting release Bitmap, tempra
 
 [LeakCanary](https://square.github.io/leakcanary/) is another choice for memory leak detection.
 
-### Memory leak detection procedure
+### Memory leak detection steps
 
 **Clean code**
 
@@ -179,4 +179,11 @@ Use [Lint](https://developer.android.com/studio/write/lint) to detect code that 
 1. Use UCDetector to find unnecessary code.
 
 2. Use Simian tool to find duplication in code.
+
 3. Find unused image in older version. Pay attention to `android:visibility="gone"` in xml file and `view.setVisibility(View.GONE)` in java code.
+
+   
+
+## Unix Filesystem Hierarchy Standard (FHS)
+
+https://www.pathname.com/fhs/
