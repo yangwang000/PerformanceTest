@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="hprof_files">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/GT_example_conved_Top_Consumers.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/memory-20201107T161625_conved_Top_Consumers.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/janet_conv_Leak_Suspects.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/janet_conv_Top_Consumers.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/GT1_conved_Top_Components.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/memory-20201107T161625_conved_Leak_Suspects.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/GT_example_conved_Leak_Suspects.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/GT1_conved_Top_Consumers.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/janet_conv_Top_Components.zip!/" />
+      <root url="jar://$PROJECT_DIR$/temp/hprof_files/GT1_conved_Leak_Suspects.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
