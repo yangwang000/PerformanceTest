@@ -104,7 +104,7 @@ This is because dex is loaded into memory by 4KB pages. Suppose we use class A, 
 
 `/proc/pid/smaps`
 
-## Network Usage Testing
+## Network Data Usage Testing
 
 There are several ways to get traffic statistics:
 
