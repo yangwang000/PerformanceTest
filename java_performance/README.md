@@ -154,7 +154,7 @@ public class PersonBuilder {
 }
 </code></pre>
 
-![Example](/Users/yangwang/Documents/projects/performance_test/java_performance/pics/java-heap-stack-diagram.png)
+![Example](https://github.com/yangwang000/PerformanceTest/blob/main/java_performance/pics/java-heap-stack-diagram.png)
 
 [1]https://www.baeldung.com/java-stack-heap <br>
 [2]https://www.betsol.com/blog/java-memory-management-for-java-virtual-machine-jvm/
