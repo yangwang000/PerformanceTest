@@ -1,0 +1,15 @@
+http://www.fairlynerdy.com/intuitive-guide-statistical-significance/
+https://www.probabilisticworld.com/intuitive-explanation-p-values/
+https://stats.stackexchange.com/questions/79687/how-would-you-explain-statistical-significance-to-people-with-no-statistical-bac
+https://digest.bps.org.uk/2010/08/16/statistical-significance-explained-in-plain-english/
+http://blog.minitab.com/blog/adventures-in-statistics-2/understanding-hypothesis-tests-why-we-need-to-use-hypothesis-tests-in-statistics
+https://towardsdatascience.com/statistical-significance-hypothesis-testing-the-normal-curve-and-p-values-93274fa32687
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4111019/
+http://www.stat.yale.edu/Courses/1997-98/101/stat101.htm
+http://www.statisticshowto.com/tables/z-table/
+https://jimgrange.wordpress.com/2015/12/05/statistics-tables-where-do-the-numbers-come-from/
+http://ww.w.statpower.net/Steiger%20Biblio/Steiger80.pdf
+https://webstat.une.edu.au/unit_materials/c6_common_statistical_tests/test_signif_pearson.html
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4111019/
+https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/t-test/
+https://www.statisticshowto.datasciencecentral.com/independent-samples-t-test/
