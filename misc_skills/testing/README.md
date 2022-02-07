@@ -1,20 +1,29 @@
 ## Testing a Real World Object
+
 **_Question: How would you test a paperclip?_**
+
 **_Step 1: Who will use it? And why?_**
 You need to discuss with your interviewer who is using the product and for what purpose. The answer may not be what you think. The answer could be"by teachers, to hold papers together;' or it could be"by artists, to bend into the shape of animal:' Or, it could be both. The answer to this question will shape how you handle the remaining questions.
+
 **_Step 2: What are the use cases?_**
 It will be useful for you to make a list of the use cases. In this case, the use case might be simply fastening paper together in a non-damaging (to the paper) way.
 For other questions, there might be multiple use cases. It might be, for example, that the product needs to be able to send and receive content, or write and erase, and so on.
+
 **_Step 3: What are the bounds of use?_**
 The bounds of use might mean holding up to thirty sheets of paper in a single usage without permanent damage (e.g., bending), and thirty to fifty sheets with minimal permanent bending.
+
 The bounds also extend to environmental factors as well. For example, should the paperclip work during very warm temperatures (90 - 110 degrees Fahrenheit)? What about extreme cold?
+
 **_Step 4: What are the stress/ failure conditions?_**
 No product is fail-proof, so analyzing failure conditions needs to be part of your testing. A good discussion to have with your interviewer is about when it's acceptable (or even necessary) for the product to fail, and what failure should mean.
+
 For example, if you were testing a laundry machine, you might decide that the machine should be able to handle at least 30 shirts or pants. Loading 30 - 45 pieces of clothing may result in minor failure, such as the clothing being inadequately cleaned. At more than 45 pieces of clothing, extreme failure might be accept­ able. However, extreme failure in this case should probably mean the machine never turning on the water. It should certainly not mean a flood or a fire.
+
 **_Step 5: How would you perform the testing?_**
 In some cases, it might also be relevant to discuss the details of performing the testing. For example, if you need to make sure a chair can withstand normal usage for five years, you probably can't actually place it in a home and wait five years. Instead, you'd need to define what"normal" usage is (How many "sits" per year on the seat? What about the armrest?). Then, in addition to doing some manual testing, you would likely want a machine to automate some of the usage.
 
 ## Testing a Function
+
 **_Step 1: Define the test cases_**
 In general, you should think about the following types of test cases:
 **The normal case:** Does it generate the correct output for typical inputs? Remember to think about poten­tial issues here. For example, because sorting often requires some sort of partitioning, it's reasonable to think that the algorithm might fail on arrays with an odd number of elements, since they can't be evenly partitioned. Your test case should list both examples.
@@ -22,8 +31,10 @@ In general, you should think about the following types of test cases:
 **Nulls and "illegal" input:** It is worthwhile to think about how the code should behave when given illegal input. For example, if you're testing a function to generate the nth Fibonacci number, your test cases should probably include the situation where n is negative.
 **Strange input:** A fourth kind of input sometimes comes up: strange input. What happens when you pass in an already sorted array? Or an array that's sorted in reverse order?
 Generating these tests does require knowledge of the function you are writing. If you are unclear as to the constraints, you will need to ask your interviewer about this first.
+
 **_Step 2: Define the expected result_**
 Often, the expected result is obvious: the right output. However, in some cases, you might want to validate additional aspects. For instance, if the sort method returns a new sorted copy of the array, you should probably validate that the original array has not been touched.
+
 **_Step 3: Write test code_**
 Once you have the test cases and results defined, writing the code to implement the test cases should be fairly straightforward.Your code might look something like:
 ```
@@ -150,11 +161,11 @@ adb shell "dumpsys activity activities | grep mResumedActivity"
 ```
 
 ### Android Locator Strategies
-|Locator Strategy|Description|Example|Code|
-|----------------|-----------|---------|--------|
-|Accessibility ID|content-desc attribute|<unique_element_name>|driver.findElementByAccessibilityId("<unique_element_name>");|
-|ID|resource-id attribute|<app_package>/<resource-id>|driver.findElementById("<resource-id>");|
-|Class Name|Uiautomator2 class name|android.widget.TextView|driver.findElementByClassName("android.widget.TextView");|
-|XPath|XML path expression|//<UiAutomator2 Class Name>[@<attribute name>="attribute value"]/<axes>::<expression>|driver.findElementByXPath();|
-|Image|matches with base64 encode image file|<base64_encode_string>|driver.findElementByImage("<base64_encode_string>");|
+|Locator Strategy        |Description|Example|Code|
+|------------------------|-----------|---------|--------|
+|Accessibility ID        |content-desc attribute|<unique_element_name>|driver.findElementByAccessibilityId("<unique_element_name>");|
+|ID                      |resource-id attribute|<app_package>/<resource-id>|driver.findElementById("<resource-id>");|
+|Class Name              |Uiautomator2 class name|android.widget.TextView|driver.findElementByClassName("android.widget.TextView");|
+|XPath                   |XML path expression|//<UiAutomator2 Class Name>[@<attribute name>="attribute value"]/<axes>::<expression>|driver.findElementByXPath();|
+|Image                   |matches with base64 encode image file|<base64_encode_string>|driver.findElementByImage("<base64_encode_string>");|
 |UiAutomator2(UiSelector)|UI Automator API, use UiSelector class|"new UiSelector().text(\"Animation\")"|((FindsByAndroidUIAutomator)driver).findElementByAndroidUIAutomator("new UiSelector().text(\"Animation\")");|
