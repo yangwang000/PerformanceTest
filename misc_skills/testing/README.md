@@ -151,7 +151,7 @@ adb shell "dumpsys activity activities | grep mResumedActivity"
 
 ### Android Locator Strategies
 |Locator Strategy|Description|Example|Code|
-|----------------|-----------|---------|--------|
+|-----|-----|----------|----------|
 |Accessibility ID|content-desc attribute|<unique_element_name>|driver.findElementByAccessibilityId("<unique_element_name>");|
 |ID|resource-id attribute|<app_package>/<resource-id>|driver.findElementById("<resource-id>");|
 |Class Name|Uiautomator2 class name|android.widget.TextView|driver.findElementByClassName("android.widget.TextView");|
