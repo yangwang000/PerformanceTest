@@ -117,3 +117,44 @@ We would probably want to use a mix of manual and automated testing.
 Manual testing would involve going through the steps above, making sure to check for all the error cases (low balance, new account, nonexistent account, and so on).
 Automated testing is a bit more complex. We'll want to automate all the standard scenarios, as shown above, and we also want to look for some very specific issues, such as race conditions. Ideally, we would be able to set up a closed system with fake accounts and ensure that, even if someone withdraws and deposits money rapidly from different locations, he never gets money or loses money that he shouldn't.
 Above all, we need to prioritize security and reliability. People's accounts must always be protected, and we must make sure that money is always properly accounted for. No one wants to unexpectedly lose money! A good tester understands the system priorities.
+
+## Automation Test Best Practice
+### Properties and Parameters
+Use `config.properties` file, TestNG `<parameter>`, `json` file and `string.xml` for project parameters and variables.
+### Driver wait
+```
+	public void waitForVisibility(MobileElement e){
+		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
+		wait.until(ExpectedConditions.visibilityOf(e));
+	}
+```
+### Fluent Page Object Model Design
+### TestNG Listener
+
+## Automation Test How to
+### How to check device id of iPhone simulator?
+```
+1. instruments -s devices
+2. xcrun simctl list
+3. From Xcode: Window -> Devices and Simulators -> Simulators. The Identifier value is the UDID.
+```
+
+### How to get udid
+```
+adb devices
+```
+
+### How to get appActivity and appPackage
+```
+adb shell "dumpsys activity activities | grep mResumedActivity"
+```
+
+### Android Locator Strategies
+|Locator Strategy|Description|Example|Code|
+|----------------|-----------|---------|--------|
+|Accessibility ID|content-desc attribute|<unique_element_name>|driver.findElementByAccessibilityId("<unique_element_name>");|
+|ID|resource-id attribute|<app_package>/<resource-id>|driver.findElementById("<resource-id>");|
+|Class Name|Uiautomator2 class name|android.widget.TextView|driver.findElementByClassName("android.widget.TextView");|
+|XPath|XML path expression|//<UiAutomator2 Class Name>[@<attribute name>="attribute value"]/<axes>::<expression>|driver.findElementByXPath();|
+|Image|matches with base64 encode image file|<base64_encode_string>|driver.findElementByImage("<base64_encode_string>");|
+|UiAutomator2(UiSelector)|UI Automator API, use UiSelector class|"new UiSelector().text(\"Animation\")"|((FindsByAndroidUIAutomator)driver).findElementByAndroidUIAutomator("new UiSelector().text(\"Animation\")");|
