@@ -129,6 +129,8 @@ Manual testing would involve going through the steps above, making sure to check
 Automated testing is a bit more complex. We'll want to automate all the standard scenarios, as shown above, and we also want to look for some very specific issues, such as race conditions. Ideally, we would be able to set up a closed system with fake accounts and ensure that, even if someone withdraws and deposits money rapidly from different locations, he never gets money or loses money that he shouldn't.
 Above all, we need to prioritize security and reliability. People's accounts must always be protected, and we must make sure that money is always properly accounted for. No one wants to unexpectedly lose money! A good tester understands the system priorities.
 
+**4.Attending Agile meetings (Daily scrum meeting/Sprint planning/Backlog refinement**
+
 ## Automation Test Best Practice
 ### Properties and Parameters
 Use `config.properties` file, TestNG `<parameter>`, `json` file and `string.xml` for project parameters and variables.
@@ -139,10 +141,11 @@ Use `config.properties` file, TestNG `<parameter>`, `json` file and `string.xml`
 		wait.until(ExpectedConditions.visibilityOf(e));
 	}
 ```
-### Fluent Page Object Model Design
+###  Page Object Model Design
+[1](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
 ### TestNG Listener
 
-## Automation Test How to
+## Automation Test How-To
 ### How to check device id of iPhone simulator?
 ```
 1. instruments -s devices
@@ -160,7 +163,7 @@ adb devices
 adb shell "dumpsys activity activities | grep mResumedActivity"
 ```
 
-### Android Locator Strategies
+## Android Locator Strategies
 |Locator Strategy|Description|Example|Code|
 |-----|-----|----------|----------|
 |Accessibility ID|content-desc attribute|<unique_element_name>|driver.findElementByAccessibilityId("<unique_element_name>");|
@@ -169,3 +172,8 @@ adb shell "dumpsys activity activities | grep mResumedActivity"
 |XPath|XML path expression|//<UiAutomator2 Class Name>[@<attribute name>="attribute value"]/<axes>::<expression>|driver.findElementByXPath();|
 |Image|matches with base64 encode image file|<base64_encode_string>|driver.findElementByImage("<base64_encode_string>");|
 |UiAutomator2(UiSelector)|UI Automator API, use UiSelector class|"new UiSelector().text(\"Animation\")"|((FindsByAndroidUIAutomator)driver).findElementByAndroidUIAutomator("new UiSelector().text(\"Animation\")");|
+
+## TestNG Soft Assert
+1. We should instantiate a SoftAssert object within a @Test method. Scope of SoftAssert should only be within the Test method as seen the above example.
+2. We should never use the same Soft Assertions with multiple test cases. In the below example, we are using the same object of SoftAssert class with multiple test cases and see the result which includes multiple test cases.
+
